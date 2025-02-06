@@ -7,8 +7,6 @@ import xlsxwriter
 
 st.set_page_config(layout="wide")
 
-st.sidebar.image('Logo.png', width=260)
-
 st.sidebar.page_link("main.py", label="Home")
 st.sidebar.page_link("Pages/inboundreports.py", label="Inventory Reports")
 st.sidebar.page_link("Pages/nobinzerolist.py", label="NOBIN / ZERO Lists")
