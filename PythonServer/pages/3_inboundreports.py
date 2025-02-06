@@ -15,6 +15,7 @@ def fill_lists(i, imax, dfloc):
     return dflist
 
 st.set_page_config(layout="wide")
+st.title("Inventory Reports")
 
 file = st.file_uploader("**Inventory File** - Upload inventory excel file in xlsx format.",type="xlsx")
 file2 = st.file_uploader("**Multiple Bins** - Upload excel file with all multi-locations in xlsx format.", type="xlsx")
