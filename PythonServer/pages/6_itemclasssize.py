@@ -24,6 +24,7 @@ def check_bin(item, bin):
         return False
 
 st.set_page_config(layout="wide")
+st.title("Calculate Item Class Size")
 
 file = st.file_uploader("**Inventory File** - upload inventory file", type="xlsx")
 #file2 = st.file_uploader("**Slotting File** - upload inventory slotting file", type="xlsx")
