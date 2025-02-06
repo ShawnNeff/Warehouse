@@ -17,6 +17,7 @@ def checknobin(file1, file2):
   return file2
 
 st.set_page_config(layout="wide")
+st.title("NOBIN / ZERO Lists")
 
 file = st.file_uploader("**Nobin Master** - Upload nobin master file.",type="xlsx")
 file2 = st.file_uploader("**Nobin List** - Upload nobin list file.", type="xlsx")
