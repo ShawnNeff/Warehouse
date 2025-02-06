@@ -6,6 +6,7 @@ import io
 import xlsxwriter
 
 st.set_page_config(layout="wide")
+st.title("Inventory History")
 
 descision = st.radio("Information you want to see:", ["Down to Zero", "Every Transaction"], index=None)
 
