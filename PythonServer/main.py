@@ -6,3 +6,5 @@ import io
 import xlsxwriter
 
 st.set_page_config(layout="wide")
+st.title("Shawn Neff - Reports")
+st.sidebar.success("Navigation")
