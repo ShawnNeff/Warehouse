@@ -18,15 +18,6 @@ def checknobin(file1, file2):
 
 st.set_page_config(layout="wide")
 
-# st.sidebar.image('logo.png', width=260)
-
-# st.sidebar.page_link("main.py", label="Home")
-# st.sidebar.page_link("Pages/inboundreports.py", label="Inventory Reports")
-# st.sidebar.page_link("Pages/nobinzerolist.py", label="NOBIN / ZERO Lists")
-# st.sidebar.page_link("Pages/3dayold.py", label="3 Day old ASN's")
-# st.sidebar.page_link("Pages/zeroprogram.py", label="Zero Program")
-# st.sidebar.page_link("Pages/itemclasssize.py", label="Calculate Item Class Size")
-
 file = st.file_uploader("**Nobin Master** - Upload nobin master file.",type="xlsx")
 file2 = st.file_uploader("**Nobin List** - Upload nobin list file.", type="xlsx")
 file3 = st.file_uploader("**Zero Master** - Upload zero master file", type="xlsx")
