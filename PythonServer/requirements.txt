@@ -2,6 +2,4 @@ streamlit
 openpyxl
 xlsxwriter
 pandas
-io
-os
 pillow
