@@ -1,2 +1,10 @@
+streamlit
 openpyxl
 xlsxwriter
+pandas
+ssl
+io
+os
+pillow
+ssl
+pip-system-certs
