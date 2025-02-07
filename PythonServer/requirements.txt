@@ -1,4 +1,4 @@
-python = 3.16
+pip
 streamlit
 openpyxl
 xlsxwriter
