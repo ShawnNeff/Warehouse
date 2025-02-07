@@ -7,5 +7,4 @@ ssl
 io
 os
 pillow
-ssl
 pip-system-certs
