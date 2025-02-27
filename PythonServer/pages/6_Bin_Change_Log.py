@@ -42,7 +42,7 @@ if file1 is not None:
 
     i_db = len(file) - 1
 
-    while i_db >= 1:
+    while i_db >= 0:
         if file.loc[i_db, 'ItemSizeClassID'] == file.loc[i_db, 'BinSizeClassID']:
             file = file.drop(i_db)
         i_db -= 1
