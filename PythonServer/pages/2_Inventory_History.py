@@ -94,11 +94,12 @@ if item is not None and onhand != "":
     numbers = ["1","2","3","4","5","6", "L", "Q", "Y"]
     bin = "BinID"
     unique_values = file[bin].unique()
+    filtered = []
+
     for l in unique_values:
         temp = str(l)
         if temp[0] in numbers:
-            filtered_bin = file[file[bin] == l]
-    
-    unique = filtered_bin['BinID'].unique()
+            filtered.append(temp)
 
-    st.write(unique)
+    for l in filtered:
+        st.write(l)
