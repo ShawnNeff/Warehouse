@@ -36,9 +36,11 @@ file1 = st.file_uploader("**Inventory File** - Upload inventory excel file in xl
 
 if file1 is not None:
     file = pd.read_excel(file1)
+    file2 = pd.read_excel(file1)
 
     # Drop garbage columns
-    file.drop(file.columns[[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 28, 29, 30, 31, 32, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 62, 63, 64]], axis=1, inplace=True)
+    file.drop(file.columns[[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 28, 29, 30, 31, 32, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 62, 63, 64]], axis=1, inplace=True)
+    file2.drop(file2.columns[[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 28, 29, 30, 31, 32, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 62, 63, 64]], axis=1, inplace=True)
 
     i_db = len(file) - 1
 
@@ -47,4 +49,14 @@ if file1 is not None:
             file = file.drop(i_db)
         i_db -= 1
 
+    i_db = len(file2) - 1
+
+    while i_db >= 0:
+        if file2.loc[i_db, 'ItemVelocityClassID'] == file2.loc[i_db, 'BinVelocityClassID']:
+            file2 = file2.drop(i_db)
+        i_db -= 1
+
+    st.subheader("Bin and Size Class Mismatch")
     st.write(file)
+    st.subheader("Velocity Mismatch")
+    st.write(file2)
