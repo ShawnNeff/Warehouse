@@ -25,7 +25,7 @@ st.title("NOBIN / ZERO Lists")
 #     st.page_link('./pages/3_Inventory_Reports.py', label="Inbound Reports")
 #     st.page_link('./pages/4_Nobin_Zero_Lists.py', label="Nobin / Zero Reports")
 #     st.page_link('./pages/5_Three_Day_Old_ASN_Reports.py', label="ASN 3 Day Old Report")
-#     st.page_link('./pages/6_Bin_Change_Log.py', label="Item Bin Size Change")
+#     st.page_link('./pages/6_Bin_Change_Log.py', label="Slotting Reports")
 #     st.page_link('./pages/7_Calculate_Item_Class_Size.py', label="Calculate Item Class Size")
 
 file = st.file_uploader("**Nobin Master** - Upload nobin master file.",type="xlsx")
