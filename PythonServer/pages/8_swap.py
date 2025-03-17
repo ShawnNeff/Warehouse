@@ -5,8 +5,8 @@ import openpyxl as op
 import io
 import xlsxwriter
 
-# st.set_page_config(layout="wide")
-# st.title("Bin Change Log Report")
+st.set_page_config(layout="wide")
+st.title("Bin Swap")
 # st.sidebar.success("Reliable Parts")
 
 # with st.sidebar:
