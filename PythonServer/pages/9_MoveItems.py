@@ -22,17 +22,17 @@ def get_row(file, item):
 
 st.set_page_config(layout="wide")
 st.title("Bin Change Log Report")
-st.sidebar.success("Reliable Parts")
+# st.sidebar.success("Reliable Parts")
 
-with st.sidebar:
-    st.page_link('./main.py', label="Home")
-    st.page_link('./pages/2_zeroprogram.py', label="Inventory History")
-    st.page_link('./pages/3_inboundreports.py', label="Inbound Reports")
-    st.page_link('./pages/4_nobinzerolist.py', label="Nobin / Zero Reports")
-    st.page_link('./pages/5_3dayold.py', label="ASN 3 Day Old Report")
-    st.page_link('./pages/6_binchange.py', label="Item Bin Size Change")
-    st.page_link('./pages/7_itemclasssize.py', label="Calculate Item Class Size")
-    st.page_link('./pages/8_swap.py', label="Swap Bins (Velocity)")
+# with st.sidebar:
+#     st.page_link('./main.py', label="Home")
+#     st.page_link('./pages/2_zeroprogram.py', label="Inventory History")
+#     st.page_link('./pages/3_inboundreports.py', label="Inbound Reports")
+#     st.page_link('./pages/4_nobinzerolist.py', label="Nobin / Zero Reports")
+#     st.page_link('./pages/5_3dayold.py', label="ASN 3 Day Old Report")
+#     st.page_link('./pages/6_binchange.py', label="Item Bin Size Change")
+#     st.page_link('./pages/7_itemclasssize.py', label="Calculate Item Class Size")
+#     st.page_link('./pages/8_swap.py', label="Swap Bins (Velocity)")
 
 
 file1 = st.file_uploader("**Inventory File** - Upload inventory excel file in xlsx format.",type="xlsx")
