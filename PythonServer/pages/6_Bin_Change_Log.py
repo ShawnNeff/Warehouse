@@ -55,7 +55,7 @@ if file1 is not None and file6 is not None:
     file = pd.read_excel(file1)
     file2 = pd.read_excel(file1)
     file4 = pd.read_excel(file6)    # Match empty bin with binsizecalss and velocity 
-    bindata = pd.read_excel('./bininfo.xlsx')
+    bindata = pd.read_excel('bininfo.xlsx')
 
     # Drop garbage columns
     file.drop(file.columns[[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 28, 29, 30, 31, 32, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 62, 63, 64]], axis=1, inplace=True)
