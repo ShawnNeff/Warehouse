@@ -247,4 +247,3 @@ if file1 is not None and file6 is not None:
     st.write("S PALLET", spallet)
     st.write("L PALLET", lpallet)
     st.write("XL PALLET", xlpallet)
-    st.write(file2)
