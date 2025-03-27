@@ -19,7 +19,7 @@ st.title("Slotting Reports")
 file1 = st.file_uploader("**Inventory File** - Upload inventory excel file in xlsx format.",type="xlsx")
 file6 = st.file_uploader("**Unassigned Bin File** - Upload inventory excel file in xlsx format.",type="xlsx")
 file7 = st.file_uploader("**Bin File** - Upload inventory excel file in xlsx format.",type="xlsx")
-
+slotting = st.file_uploader("**Slotting Info** - Upload inventory excel file in xlsx format.",type="xlsx")
 # file2 = st.file_uploader("**Bin Change Log** - Upload bin change log excel file in xlsx format.",type="xlsx")
 # file3 = st.file_uploader("**Size Class Log** - Upload LAT_US_Missing_Item_Size_Class excel file in xlsx format.",type="xlsx")
 
@@ -67,7 +67,7 @@ if file1 is not None and file6 is not None:
     merge_bin = file4.merge(bindata, how='inner', on=['BinID'])
     merge_bin.to_excel('temp.xlsx')
     test = pd.read_excel('temp.xlsx')
-    slotting = pd.read_excel('Slottinginfo.xlsx')
+    # slotting = pd.read_excel('Slottinginfo.xlsx')
     i_db = len(file) - 1
     i_bin = len(test) - 1
 
