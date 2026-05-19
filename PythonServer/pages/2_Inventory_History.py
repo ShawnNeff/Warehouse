@@ -32,7 +32,7 @@ if item is not None and onhand != "":
     # Reorder columns, add OnHand column at the end
     file = file[['ItemID', 'LedgerDate', 'UserID', 'TransactionType', 'TransactionNumber', 'SourceBinID', 'BinID', 'Quantity']]
     file['OnHand'] = ""
-    st.write(file.columns)
+    st.write(file)
     
     quantity = int(onhand)
 
