@@ -33,8 +33,7 @@ if item is not None and onhand != "":
     file = file[['ItemID', 'LedgerDate', 'UserID', 'TransactionType', 'TransactionNumber', 'SourceBinID', 'BinID', 'Quantity']]
     file['OnHand'] = ""
 
-    #quantity = int(onhand)
-    quantity = 4
+    quantity = int(onhand)
 
     # Declare variables to hold transaction types
     transactions = ['ITEM.RECEIVE', 'ITEM.INDUCT', 'ORD.SHIP', 'ITEM.DEDUCT', 'ITEM.RETURN', 'ITEM.UNRECEIVE', 'PHYSINV.POST']
