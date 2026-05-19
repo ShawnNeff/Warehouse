@@ -30,8 +30,8 @@ if item is not None and onhand != "":
     file.drop(file.columns[[0, 4, 6, 7, 12, 13]], axis=1, inplace=True)
 
     # Reorder columns, add OnHand column at the end
-    file = file[['ItemID', 'LedgerDate', 'UserID', 'TransactionType', 'TransactionNumber', 'SourceBinID', 'BinID', 'Quantity', 'OnHand']]
-    #file['OnHand'] = ""
+    file = file[['ItemID', 'LedgerDate', 'UserID', 'TransactionType', 'TransactionNumber', 'SourceBinID', 'BinID', 'Quantity']]
+    file = file['OnHand'] = ""
 
     quantity = int(onhand)
 
@@ -39,7 +39,7 @@ if item is not None and onhand != "":
     transactions = ['ITEM.RECEIVE', 'ITEM.INDUCT', 'ORD.SHIP', 'ITEM.DEDUCT', 'ITEM.RETURN', 'ITEM.UNRECEIVE', 'PHYSINV.POST']
     returns = ['MISSING', 'DAMAGED']
     
-    file.loc[1, 'OnHand'] = quantity
+    file.loc[0, 'OnHand'] = quantity
 
     i = 0
 
