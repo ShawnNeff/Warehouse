@@ -31,7 +31,8 @@ if item is not None and onhand != "":
 
     # Reorder columns, add OnHand column at the end
     file = file[['ItemID', 'LedgerDate', 'UserID', 'TransactionType', 'TransactionNumber', 'SourceBinID', 'BinID', 'Quantity']]
-    file = file['OnHand'] = ""
+    #file['OnHand'] = ""
+    file = file['Onhand']
 
     quantity = int(onhand)
 
