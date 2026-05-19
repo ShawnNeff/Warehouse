@@ -39,8 +39,7 @@ if item is not None and onhand != "":
     transactions = ['ITEM.RECEIVE', 'ITEM.INDUCT', 'ORD.SHIP', 'ITEM.DEDUCT', 'ITEM.RETURN', 'ITEM.UNRECEIVE', 'PHYSINV.POST']
     returns = ['MISSING', 'DAMAGED']
     
-    #file.loc[0, 'OnHand'] = quantity
-    file.loc[(file['Item'] == 'Widget') & (file.index == 0), 'OnHand'] = quantity
+    file.loc[0, 'OnHand'] = quantity
 
     i = 0
 
