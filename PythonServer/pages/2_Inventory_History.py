@@ -40,7 +40,7 @@ if item is not None and onhand != "":
     returns = ['MISSING', 'DAMAGED']
 
     #file.loc[0, 'OnHand'] = quantity
-    file.loc[0, 8] = quantity
+    file.loc[0, OnHand] = quantity
 
     i = 0
 
