@@ -23,6 +23,8 @@ onhand = st.text_input("Enter stock on hand: ")
 
 item = st.file_uploader("**Inventory File** - Upload inventory excel file in xlsx format.",type="xlsx")
 
+int(onhand)
+
 if item is not None and onhand != "":
     file = pd.read_excel(item)
 
