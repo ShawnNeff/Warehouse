@@ -32,15 +32,14 @@ if item is not None and onhand != "":
     # Reorder columns, add OnHand column at the end
     file = file[['ItemID', 'LedgerDate', 'UserID', 'TransactionType', 'TransactionNumber', 'SourceBinID', 'BinID', 'Quantity']]
     file['OnHand'] = ""
-
+    st.rerun()
     quantity = int(onhand)
 
     # Declare variables to hold transaction types
     transactions = ['ITEM.RECEIVE', 'ITEM.INDUCT', 'ORD.SHIP', 'ITEM.DEDUCT', 'ITEM.RETURN', 'ITEM.UNRECEIVE', 'PHYSINV.POST']
     returns = ['MISSING', 'DAMAGED']
     
-    #file.loc[0, 'OnHand'] = quantity
-    file.at[0, 'OnHand'] = quantity
+    file.loc[0, 'OnHand'] = quantity
 
     i = 0
 
