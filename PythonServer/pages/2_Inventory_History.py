@@ -44,7 +44,9 @@ if item is not None and onhand != "":
 
     i = 0
 
-    file.loc[i, 'OnHand'] = quantity
+    #file.loc[i, 'OnHand'] = quantity
+    file.loc[i, 9] = quantity
+    
     type = file.loc[i, 'TransactionType']
 
     if type in transactions:
