@@ -40,7 +40,7 @@ if item is not None and onhand != "":
     returns = ['MISSING', 'DAMAGED']
     
     #file.loc[0, 'OnHand'] = quantity
-    st.session_state.file.loc[0, 'OnHand'] = quantity
+    file.loc[(file.index == 0), 'OnHand'] = quantity
 
     i = 0
 
