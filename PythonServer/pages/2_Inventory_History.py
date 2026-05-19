@@ -73,7 +73,8 @@ if item is not None and onhand != "":
         
         if descision == "Down to Zero" and quantity == 0:
             i += 1
-            file.loc[i, 'OnHand'] = quantity
+            #file.loc[i, 'OnHand'] = quantity
+            file.loc[i, 9] = quanitty
             
             while l > i:
                 file = file.drop(l)
