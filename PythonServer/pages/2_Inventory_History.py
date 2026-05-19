@@ -40,12 +40,12 @@ if item is not None and onhand != "":
     returns = ['MISSING', 'DAMAGED']
 
     #file.loc[0, 'OnHand'] = quantity
-    file.loc[0, 9] = quantity
+    file.loc[0, 8] = quantity
 
     i = 0
 
     #file.loc[i, 'OnHand'] = quantity
-    file.loc[i, 9] = quantity
+    file.loc[i, 8] = quantity
     
     type = file.loc[i, 'TransactionType']
 
@@ -64,7 +64,7 @@ if item is not None and onhand != "":
 
         if type in transactions:
             #file.loc[i, 'OnHand'] = quantity
-            file.loc[i, 9] = quantity
+            file.loc[i, 8] = quantity
 
             type = file.loc[i, 'SourceBinID']
 
@@ -74,7 +74,7 @@ if item is not None and onhand != "":
         if descision == "Down to Zero" and quantity == 0:
             i += 1
             #file.loc[i, 'OnHand'] = quantity
-            file.loc[i, 9] = quantity
+            file.loc[i, 8] = quantity
             
             while l > i:
                 file = file.drop(l)
