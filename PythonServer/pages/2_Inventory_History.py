@@ -32,7 +32,6 @@ if item is not None and onhand != "":
     # Reorder columns, add OnHand column at the end
     file = file[['ItemID', 'LedgerDate', 'UserID', 'TransactionType', 'TransactionNumber', 'SourceBinID', 'BinID', 'Quantity']]
     file['OnHand'] = ""
-    st.write(file)
     
     quantity = int(onhand)
 
@@ -41,6 +40,9 @@ if item is not None and onhand != "":
     returns = ['MISSING', 'DAMAGED']
 
     #file.loc[0, 'OnHand'] = quantity
+    if 'file' not in st.session_state:
+        st.session_state['file'] = file
+        
     st.session_state['file'].loc[0, 'OnHand'] = quantity
 
     i = 0
