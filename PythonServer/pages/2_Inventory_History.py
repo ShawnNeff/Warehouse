@@ -63,7 +63,7 @@ if item is not None and onhand != "":
         type = file.loc[i, 'TransactionType']
 
         if type in transactions:
-            ile.loc[i, 'OnHand'] = quantity
+            file.loc[i, 'OnHand'] = quantity
             #file.loc[i, 8] = quantity
 
             type = file.loc[i, 'SourceBinID']
