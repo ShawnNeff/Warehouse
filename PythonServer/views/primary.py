@@ -17,10 +17,11 @@ def primary(file):
     return mergef
 
 # Variable - upload inventory file
-file = st.file_uploader("Upload inventory file.",type="xlsx")
+item = st.file_uploader("Upload inventory file.",type="xlsx")
 
 # IF Statement - makes sure user added both files before running report
-if file is not None:
+if item is not None:
+    file = pd.read_excel(item)
     # Function call - get parts that do not have a primary
     file = primary(file)
     
