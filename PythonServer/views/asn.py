@@ -8,7 +8,7 @@ import xlsxwriter
 # Function - cleans the excel file, keeps only what is needed
 def clean_data(file):
     temp = file.drop(file.columns[[0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25]], axis=1, inplace=True)
-    temp.columns = ['ASN', 'CONSOLIDATED']
+    #temp.columns = ['ASN', 'CONSOLIDATED']
     file = temp.dropna()
     return file
 
@@ -16,10 +16,13 @@ def clean_data(file):
 def get_asn(file):
     s = set()
     for index, row in file.iterrows():
-        if row['CONSOLIDATED'] == "" or row['CONSOLIDATED'] == " ":
-            s.add(row['ASN'])
+        #if row['CONSOLIDATED'] == "" or row['CONSOLIDATED'] == " ":
+        if file.loc[index, 1] == "" or file.loc[index, 1] == " ":
+            #s.add(row['ASN'])
+            s.add(file.loc[index, 0])
         else:
-            s.add(row['CONSOLIDATION'])
+            #s.add(row['CONSOLIDATION'])
+            s.add(file.loc[index, 1])
     return s
 
 # Functions - returns only the unique ASN's from yesterdays file sorted a to z
