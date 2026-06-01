@@ -8,7 +8,7 @@ import xlsxwriter
 # Function - cleans the excel file, keeps only what is needed
 def clean_data(file):
     file = file.drop(file.columns[[0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25]], axis=1, inplace=True)
-    file = file.columns['ASN', 'CONSOLIDATED']
+    file.columns = ['ASN', 'CONSOLIDATED']
     file = file.dropna()
     return file
 
@@ -56,8 +56,14 @@ if item is not None and item2 is not None:
     file2 = pd.read_excel(item2)
     
     # Function Call - returns only ASN information
-    file = clean_data(file)
-    file2 = clean_data(file2)
+    #file = clean_data(file)
+    #file2 = clean_data(file2)
+    file = file.drop(file.columns[[0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25]], axis=1, inplace=True)
+    file.columns = ['ASN', 'CONSOLIDATED']
+    file = file.dropna()
+    file2 = file2.drop(file.columns[[0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25]], axis=1, inplace=True)
+    file2.columns = ['ASN', 'CONSOLIDATED']
+    file2 = file2.dropna()
 
     # Function Call - returns only unique ASN's from each file
     sf = get_asn(file)
