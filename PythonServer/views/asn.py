@@ -54,11 +54,11 @@ if file is not None and file2 is not None:
 
     # Function Call - returns only ASN information
     #file = clean_data(file)
-    file = file.drop(file.columns[[0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25]], axis=1, inplace=True)
+    file.drop(file.columns[[0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25]], axis=1, inplace=True)
     file.columns = ['ASN', 'CONSOLIDATED']
     file = file.dropna()
     #file2 = clean_data(file2)
-    file2 = file2.drop(file.columns[[0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25]], axis=1, inplace=True)
+    file2.drop(file2.columns[[0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25]], axis=1, inplace=True)
     file2.columns = ['ASN', 'CONSOLIDATED']
     file2 = file.dropna()
 
