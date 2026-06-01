@@ -103,9 +103,6 @@ contact_me = st.Page(
     icon=":material/account_circle:",
 )
 
-# --- NAVIGATION SETUP [WITOUT SECTIONs] ---
-#pg = st.navigation(pages=[about_page, project_1_page, project_2_page])
-
 # --- NAVIGATION SETUP [WITH SECTIONS] ---
 pg = st.navigation(
     {
