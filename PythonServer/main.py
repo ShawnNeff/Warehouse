@@ -123,5 +123,4 @@ pg = st.navigation(
 st.sidebar.text("Made by Shawn Neff")
 
 # --- RUN NAVIGATION ---
-pg = st.run()
-#pg.run()
+pg.run()
