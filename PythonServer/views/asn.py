@@ -8,7 +8,7 @@ import xlsxwriter
 # Function - cleans the excel file, keeps only what is needed
 def clean_data(file):
     temp = file.drop(file.columns[[0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25]], axis=1, inplace=True)
-    temp.columns = ['ASN', 'CONSOLIDATED']
+    #temp.columns = ['ASN', 'CONSOLIDATED']
     temp.rename(columns={temp.columns[0]: 'ASN', temp.column[1]: 'CONSOLIDATION'}, inplace=True)
     file = temp.dropna()
     return file
