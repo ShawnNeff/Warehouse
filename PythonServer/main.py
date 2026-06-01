@@ -113,7 +113,8 @@ pg = st.navigation(
 )
 
 # --- SHARED ON ALL PAGES ---
-st.logo("assets/Reliable-Parts_Logo.webp")
+#st.logo("assets/Reliable-Parts_Logo.webp")
+st.logo("assets/logo.png")
 st.sidebar.text("Made by Shawn Neff")
 
 # --- RUN NAVIGATION ---
