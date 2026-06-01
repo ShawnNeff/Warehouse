@@ -50,7 +50,7 @@ sf = set()
 sf2 = set()
 
 # IF Statement - makes sure user added both files before running report
-if file is not None and file2 is not None:
+if item is not None and item2 is not None:
 
     file = pd.read_excel(item)
     file2 = pd.read_excel(item2)
