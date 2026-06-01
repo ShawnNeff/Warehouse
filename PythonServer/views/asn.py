@@ -1,9 +1,9 @@
 import streamlit as st
 import os
 import pandas as pd
-#import openpyxl as op
+import openpyxl as op
 import io
-#import xlsxwriter
+import xlsxwriter
 
 # Function - cleans the excel file, keeps only what is needed
 def clean_data(file):
