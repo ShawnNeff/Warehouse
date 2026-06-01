@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pd
+import os
+import io
 
 # Function - get items without a primary location
 def primary(file):
