@@ -7,9 +7,9 @@ import xlsxwriter
 
 # Function - cleans the excel file, keeps only what is needed
 def clean_data(file):
+    temp = pd.read_excel(file)
     temp = file.drop(file.columns[[0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25]], axis=1, inplace=True)
-    #temp.columns = ['ASN', 'CONSOLIDATED']
-    temp.rename(columns={temp.columns[0]: 'ASN'}, inplace=True)
+    temp.columns = ['ASN', 'CONSOLIDATED']
     file = temp.dropna()
     return file
 
@@ -53,8 +53,8 @@ sf2 = set()
 # IF Statement - makes sure user added both files before running report
 if item is not None and item2 is not None:
 
-    file = pd.read_excel(item)
-    file2 = pd.read_excel(item2)
+    #file = pd.read_excel(item)
+    #file2 = pd.read_excel(item2)
     
     # Function Call - returns only ASN information
     file = clean_data(file)
