@@ -36,8 +36,8 @@ def sort_set(file):
     return sorted(file)
 
 # Variable - sorts both files
-file = st.file_uploader("**Today's ASN File** - Upload today's open ASN file.",type="xlsx")
-file2 = st.file_uploader("**Yesterday's ASN File** - Upload yesterday's open ASN file.", type="xlsx")
+item = st.file_uploader("**Today's ASN File** - Upload today's open ASN file.",type="xlsx")
+item2 = st.file_uploader("**Yesterday's ASN File** - Upload yesterday's open ASN file.", type="xlsx")
 
 # Variable - dataframe to save results
 file3 = pd.DataFrame()
@@ -52,39 +52,19 @@ sf2 = set()
 # IF Statement - makes sure user added both files before running report
 if file is not None and file2 is not None:
 
+    file = pd.read_excel(item)
+    file2 = pd.read_excel(item2)
+    
     # Function Call - returns only ASN information
-    #file = clean_data(file)
-    file.drop(file.columns[[0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25]], axis=1, inplace=True)
-    file.columns = ['ASN', 'CONSOLIDATED']
-    file = file.dropna()
-    #file2 = clean_data(file2)
-    file2.drop(file2.columns[[0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25]], axis=1, inplace=True)
-    file2.columns = ['ASN', 'CONSOLIDATED']
-    file2 = file.dropna()
+    file = clean_data(file)
+    file2 = clean_data(file2)
 
     # Function Call - returns only unique ASN's from each file
-    #sf = get_asn(file)
-    s = set()
-    for index, row in file.iterrows():
-        if row['CONSOLIDATED'] == "" or row['CONSOLIDATED'] == " ":
-            s.add(row['ASN'])
-        else:
-            s.add(row['CONSOLIDATION'])
-    #sf2 = get_asn(file2)
-    s = set()
-    for index, row in file2.iterrows():
-        if row['CONSOLIDATED'] == "" or row['CONSOLIDATED'] == " ":
-            s.add(row['ASN'])
-        else:
-            s.add(row['CONSOLIDATION'])
+    sf = get_asn(file)
+    sf2 = get_asn(file2)
 
     # Function Call - returns sorted unique ASN's from yesterday's file
-    #unique_sf = get_unique_asn(sf, sf2)
-    unique_file = set()
-    unique_file = file2 - file
-    
-    #unique_file = sort_set(unique_file)
-    unique_file = sorted(unique_file)
+    unique_sf = get_unique_asn(sf, sf2)
 
     # Add each ASN in set to dataframe
     for s in unique_sf:
