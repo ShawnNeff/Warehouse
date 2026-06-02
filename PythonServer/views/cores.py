@@ -1,6 +1,11 @@
 import streamlit as st
 import pandas as pd
 
+st.header("CORE/PARENT Missmatch")
+st.write("- Core and parent part in different locations.")
+st.write("- Core and parent stock does not match.")
+st.write("")
+
 item = st.file_uploader("Upload inventory file.",type="xlsx")
 
 if item is not None:
