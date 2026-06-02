@@ -26,7 +26,7 @@ def MultiItems(f):
 
     return dupitem
 
-st.header("Muliple Items in Discrete Bin")
+st.header("Muliple Items in Discrete Location")
 st.write("")
 st.write("")
 
