@@ -5,7 +5,7 @@ import pandas as pd
 import io
 #import xlsxwriter
 
-st.header("---Inventory History - Item Research Tool ---")
+st.header("Inventory History - Item Research Tool")
 st.write("")
 st.write("")
 
