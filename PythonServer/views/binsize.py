@@ -15,4 +15,5 @@ if item is not None:
 
     df = file[file['ItemSizeClassID'] != file['BinSizeClassID']]
 
-    st.write(df)
+    
+    st.write(df[['ItemID', 'BinSizeClassID']])
