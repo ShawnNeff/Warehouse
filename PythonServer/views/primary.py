@@ -9,7 +9,11 @@ def get_primary(file):
     matching_row = file[file['PrimaryBin'] != file['BinID']]
 
     return matching_row
-        
+
+st.header("Item without Primary Location")
+st.write("")
+st.write("")
+
 # Variable - upload inventory file
 item = st.file_uploader("Upload inventory file.",type="xlsx")
 
