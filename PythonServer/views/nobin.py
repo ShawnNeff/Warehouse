@@ -5,7 +5,9 @@ import os
 
 # list for all non locations
 
-nobinmaster = pd.read_excel('./files/nobinmaster.xlsx')
+path = os.path.dirname('nobinmaster.xlsx')
+
+nobinmaster = pd.read_excel(path)
 
 item = st.file_uploader("Upload unassigned bins file.",type="xlsx")
 
