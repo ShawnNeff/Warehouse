@@ -1,17 +1,12 @@
 import streamlit as st
 import os
 import pandas as pd
-import openpyxl as op
-import io
-import xlsxwriter
 
 # Function - cleans the excel file, keeps only what is needed
 def clean_data(file):
-    temp = pd.DataFrame()
-    
-    temp = file.drop(file.columns[[0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25]], axis=1, inplace=True)
-    temp.columns = ['ASN', 'CONSOLIDATED']
-    file = temp.dropna()
+    file.drop(file.columns[[0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25]], axis=1, inplace=True)
+    file.columns = ['ASN', 'CONSOLIDATED']
+    file = file.dropna()
     return file
 
 # Function - returns set of all ASN's in the file
@@ -21,7 +16,7 @@ def get_asn(file):
         if row['CONSOLIDATED'] == "" or row['CONSOLIDATED'] == " ":
             s.add(row['ASN'])
         else:
-            s.add(row['CONSOLIDATION'])
+            s.add(row['CONSOLIDATED'])
     return s
 
 # Functions - returns only the unique ASN's from yesterdays file sorted a to z
@@ -37,7 +32,7 @@ def get_unique_asn(file, file2):
 def sort_set(file):
     return sorted(file)
 
-# Variable - sorts both files
+# Variable - stores both files
 item = st.file_uploader("**Today's ASN File** - Upload today's open ASN file.",type="xlsx")
 item2 = st.file_uploader("**Yesterday's ASN File** - Upload yesterday's open ASN file.", type="xlsx")
 
@@ -56,7 +51,7 @@ if item is not None and item2 is not None:
 
     file = pd.read_excel(item)
     file2 = pd.read_excel(item2)
-    
+
     # Function Call - returns only ASN information
     file = clean_data(file)
     file2 = clean_data(file2)
