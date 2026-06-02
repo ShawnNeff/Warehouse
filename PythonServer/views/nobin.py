@@ -4,8 +4,10 @@ import io
 import os
 
 # list for all non locations
+savedir = "./files"
+filepath = os.path.join(savedir, 'nobinmaster.xlsx')
 
-nobinmaster = pd.read_excel('./files/nobinmaster.xlsx')
+nobinmaster = pd.read_excel(filepath)
 
 item = st.file_uploader("Upload unassigned bins file.",type="xlsx")
 
