@@ -4,7 +4,11 @@ import pandas as pd
 #import openpyxl as op
 import io
 #import xlsxwriter
-    
+
+st.write("---Inventory History - Item research Tool ---")
+st.write("")
+st.write("")
+
 descision = st.radio("Information you want to see:", ["Down to Zero", "Every Transaction"], index=None)
 
 onhand = st.text_input("Enter stock on hand: ")
