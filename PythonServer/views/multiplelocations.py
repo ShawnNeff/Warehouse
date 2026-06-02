@@ -10,7 +10,7 @@ if item is not None:
     # open inventory file
     file = pd.read_excel(item)
 
-    file = file[file.duplicated(subset=['column_name'], keep=False)]
+    file = file[file.duplicated(subset=['PrimaryBin'], keep=False)]
 
     for index, row in file.iterrows():
         if row['BinSizeClassID'] not in l:
