@@ -1,6 +1,10 @@
 import streamlit as st
 import pandas as pd
 
+st.header("Mulitple Locations for Single Item")
+st.write("")
+st.write("")
+
 item = st.file_uploader("Upload Inventory file.",type="xlsx")
 
 l = ['L PALLET', 'XL PALLET', 'S PALLET', 'L BIN 6', 'M SHELF', 'S SHELF', 'L SHELF', 'LONG']
