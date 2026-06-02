@@ -32,7 +32,7 @@ def get_unique_asn(file, file2):
 def sort_set(file):
     return sorted(file)
 
-st.header("--- ASN Research - ASN's Removed from File ---")
+st.header("ASN Research - ASN's Removed from File")
 st.write("")
 st.write("")
 
