@@ -26,6 +26,10 @@ def MultiItems(f):
 
     return dupitem
 
+st.header("Muliple Items in Discrete Bin")
+st.write("")
+st.write("")
+
 item = st.file_uploader("Upload Inventory file.",type="xlsx")
 
 if item is not None:
