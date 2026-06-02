@@ -13,5 +13,7 @@ if item is not None:
     file = file[file.duplicated(subset=['PrimaryBin'], keep=False)]
 
     for index, row in file.iterrows():
-        if row['BinSizeClassID'] not in l:
-            st.write(row)
+        if row['BinSizeClassID'] in l:
+            file = file.drop(index)
+
+    st.write(file)
