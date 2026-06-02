@@ -1,28 +1,26 @@
 import streamlit as st
 import pandas as pd
-import os
-import io
+import numpy as np
 
-# Function - get items without a primary location
-def primary(file):
-    f = pd.DataFrame()
-    f2 = pd.DataFrame()
-    mergef = pd.DataFrame()
+# Function - Output non matching columns [PrimaryBin], [BinID]
+def get_primary(file):
+    matching_row = pd.DataFrame()
 
-    f = file[file['PrimaryBin'] == "NOBIN"]
-    f2 = file[file['PrimaryBin'] == "<NONE>"]
+    matching_row = file[file['PrimaryBin'] != file['BinID']]
 
-    mergef = pd.merge(f, f2, how='outer')
-
-    return mergef
-
+    return matching_row
+        
 # Variable - upload inventory file
 item = st.file_uploader("Upload inventory file.",type="xlsx")
 
 # IF Statement - makes sure user added both files before running report
 if item is not None:
+
+    # Variable - read excel file
     file = pd.read_excel(item)
+
     # Function call - get parts that do not have a primary
-    file = primary(file)
+    #file = primary(file)
+    file = get_primary(file)
     
     st.write(file)
