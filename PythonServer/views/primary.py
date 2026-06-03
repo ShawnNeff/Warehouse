@@ -27,4 +27,4 @@ if item is not None:
     #file = primary(file)
     file = get_primary(file)
     
-    st.write(file)
+    st.write(file[['ItemID', 'Quantity', 'PrimaryBin', 'BinID']])
