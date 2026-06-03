@@ -74,4 +74,4 @@ if item is not None:
 
     file = MultiItems(file)
 
-    st.write(file)
+    st.write(file[['ItemID', 'Quanitty', 'PrimaryBin')
