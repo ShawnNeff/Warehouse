@@ -12,4 +12,4 @@ if item is not None:
 
     df = file[file['ItemVelocityClassID'] != file['BinVelocityClassID']]
 
-    st.write(df[['ItemID', 'PrimaryBin', 'Quantity', 'BinVelocityClassID', 'ItemVelocityClassID']])
+    st.write(df[['ItemID', 'PrimaryBin', 'Quantity', 'BinVelocityClassID', 'ItemVelocityClassID', 'BinSizeClassID']])
