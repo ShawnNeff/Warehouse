@@ -32,10 +32,6 @@ def get_unique_asn(file, file2):
 def sort_set(file):
     return sorted(file)
 
-st.header("ASN Research - ASN's Removed from File")
-st.write("")
-st.write("")
-
 # Variable - stores both files
 item = st.file_uploader("**Today's ASN File** - Upload today's open ASN file.",type="xlsx")
 item2 = st.file_uploader("**Yesterday's ASN File** - Upload yesterday's open ASN file.", type="xlsx")
@@ -64,7 +60,11 @@ if item is not None and item2 is not None:
     sf = get_asn(file)
     sf2 = get_asn(file2)
 
-    # Function Call - returns sorted unique ASN's from yesterday's file
+    result = list(set(sf) ^ set(sf2))
+
+    result.sort()
+    
+    #Function Call - returns sorted unique ASN's from yesterday's file
     unique_sf = get_unique_asn(sf, sf2)
 
     # Add each ASN in set to dataframe
@@ -72,5 +72,5 @@ if item is not None and item2 is not None:
         file3.loc[x, 0] = s
         x += 1
 
-    # Display File
+    #Display File
     st.write(file3)
