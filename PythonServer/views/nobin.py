@@ -5,9 +5,14 @@ import os
 
 # list for all non locations
 filepath = "./files/nobinmaster.xlsx"
+nobinmaster = pd.DataFrame()
 
-nobinmaster = pd.read_excel(filepath)
-
+if os.path.exist(filepath):
+    nobinmaster = pd.read_excel(filepath)
+    st.write("file loaded")
+else:
+    st.error("File not found on the server.")
+    
 item = st.file_uploader("Upload unassigned bins file.",type="xlsx")
 
 if item is not None:
