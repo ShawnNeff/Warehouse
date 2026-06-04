@@ -14,7 +14,7 @@ def printzero(file):
     for index, row in file.iterrows():
         if row['BinSizeClassID'] in multibins:
             temp = [row['ItemID'], row['PrimaryBin']]
-            lsta.appent(temp)
+            lsta.append(temp)
         else:
             lstb.append(row['PrimaryBin'])
 
