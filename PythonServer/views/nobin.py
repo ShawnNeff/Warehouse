@@ -27,4 +27,4 @@ if item is not None:
 
     st.write(unique_combined_file[['BinID']])
 
-    file.to_excel('nobinmaster.xlsx', index=False)
+    file.to_excel('./PythonServer/files/nobinmaster.xlsx', index=False)
