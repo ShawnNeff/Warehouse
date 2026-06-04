@@ -4,7 +4,7 @@ import io
 import os
 
 # list for all non locations
-script_dir = os.path.dirnam(__file__)
+script_dir = os.path.dirname(__file__)
 filepath = os.path.join(script_dir, 'nobinmaster.xlsx')
 
 #filepath = "./nobinmaster.xlsx"
