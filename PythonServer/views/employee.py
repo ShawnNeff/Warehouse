@@ -46,7 +46,7 @@ def save_file(employee, entertime):
             entertime.loc[index, "StartTime"] = employee[row['Employee']]['starttime']
             entertime.loc[index, "1stBreak"] = employee[row['Employee']]['breakone']
             entertime.loc[index, "2ndBreak"] = employee[row['Employee']]['breaktwo']
-            entertime.loc[index, "ClockedIn"] = employee[row['Employee']]['clockin']
+            entertime.loc[index, "ClockedIn"] = str(employee[row['Employee']]['clockin'])
             entertime.loc[index, "LunchOut"] = employee[row['Employee']]['lunchout']
             entertime.loc[index, "LunchIn"] = employee[row['Employee']]['lunchin']
             entertime.loc[index, "ClockOut"] = employee[row['Employee']]['clockout']
