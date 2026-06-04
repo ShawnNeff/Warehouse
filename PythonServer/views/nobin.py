@@ -25,6 +25,6 @@ if item is not None:
     # keep=False drops ALL occurrences of any rows that have matches
     unique_combined_file = combined_file.drop_duplicates(keep=False)
 
-    st.write(unique_combined_file)
+    st.write(unique_combined_file[['BinID']])
 
     file.to_excel('nobinmaster.xlsx', index=False)
