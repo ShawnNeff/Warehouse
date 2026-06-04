@@ -3,10 +3,6 @@ import pandas as pd
 import io
 import os
 
-# list for all non locations
-#script_dir = os.path.dirname(__file__)
-#filepath = os.path.join(script_dir, 'nobinmaster.xlsx')
-
 filepath = "./PythonServer/files/nobinmaster.xlsx"
 nobinmaster = pd.DataFrame()
 
@@ -29,6 +25,6 @@ if item is not None:
     # keep=False drops ALL occurrences of any rows that have matches
     unique_combined_file = combined_file.drop_duplicates(keep=False)
 
-    st.write(unique_combined_file)
+    st.write(unique_combined_file['BinID')
 
     file.to_excel('nobinmaster.xlsx', index=False)
