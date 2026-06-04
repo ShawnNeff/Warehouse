@@ -4,8 +4,7 @@ import io
 import os
 
 # list for all non locations
-savedir = "./files"
-filepath = os.path.join(savedir, 'nobinmaster.xlsx')
+filepath = "./files/nobinmaster.xlsx"
 
 nobinmaster = pd.read_excel(filepath)
 
