@@ -4,10 +4,10 @@ import io
 import os
 
 # list for all non locations
-filepath = "./nobinmaster.xlsx"
+filepath = "./files/nobinmaster.xlsx"
 nobinmaster = pd.DataFrame()
 
-if os.path.exist(filepath):
+if os.path.exists(filepath):
     nobinmaster = pd.read_excel(filepath)
     st.write("file loaded")
 else:
