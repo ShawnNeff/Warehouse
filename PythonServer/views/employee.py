@@ -35,9 +35,7 @@ def clean_file(file, employee):
 
     return employee
 
-def save_file(employee):
-
-    entertime = pd.read_excel('dailytph.xlsx')
+def save_file(employee, entertime):
 
     for index, row in entertime.iterrows():
         if row['Employee'] in employee:
@@ -56,12 +54,7 @@ def save_file(employee):
             if employee[row['Employee']]['total'] > 8:
                 entertime.loc[index, "OT"] = "X"
 
-    entertime.to_excel('report.xlsx', index=False)
-
-def load_file():
-    file = pd.read_excel('timecard.xls')
-
-    return file
+    st.write(entertime)
 
 def get_employee():
 
@@ -203,10 +196,19 @@ def set_breaks(employee):
             employee[e]['breaktwo'] = ""
     return employee
 
-file = load_file()
+st.header("Employee Timecard")
+st.write("")
+st.write("")
 
-employee = get_employee()
+item = st.file_uploader("Upload ADP timecard.",type="xlsx")
+item2 = st.file_uploader("TPH File.", type="xlsx")
 
-employee = clean_file(file, employee)
+if item is not None and item2 is not None:
+    file = pd.read_excel(item)
+    file2 = pd.read_excel(item2)
 
-save_file(employee)
+    employee = get_employee()
+    
+    employee = clean_file(file, employee)
+    
+    save_file(employee, file2)
