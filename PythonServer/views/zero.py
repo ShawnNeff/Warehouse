@@ -57,15 +57,15 @@ if item is not None:
     file = pd.read_excel(item)
 
     file2 = file[file['Quantity'] == 0]
+    file3 = file2[file2['HostOnPurchaseOrder'] != 0]
 
-    file2.to_excel('./PythonServer/files/zerolist.xlsx', index=False)
+    file3.to_excel('./PythonServer/files/zerolist.xlsx', index=False)
 
-    file = pd.read_excel('./PythonServer/files/zerolist.xlsx')
-    #file2 = pd.read_excel('zeromaster.xlsx')
+    file3 = pd.read_excel('./PythonServer/files/zerolist.xlsx')
 
     file3 = file['ItemID'].isin(zeromaster['ItemID'])
     file.drop(zeromaster[file3].index, inplace=True)
-
+    
     file = printzero(file)
     
     st.write(file)
