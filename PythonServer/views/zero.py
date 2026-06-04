@@ -11,8 +11,6 @@ if os.path.exists(filepath):
     st.write("file loaded")
 else:
     st.error("File not found on the server.")
-    
-zeromaster = pd.read_excel('zeromaster.xlsx')
 
 item = st.file_uploader("Upload inventory file.",type="xlsx")
 
