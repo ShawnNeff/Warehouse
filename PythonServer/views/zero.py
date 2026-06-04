@@ -1,6 +1,15 @@
 import streamlit as st
 import pandas as pd
 
+filepath = "./PythonServer/files/zeromaster.xlsx"
+zeromaster = pd.DataFrame()
+
+if os.path.exists(filepath):
+    zeromaster = pd.read_excel(filepath)
+    st.write("file loaded")
+else:
+    st.error("File not found on the server.")
+    
 zeromaster = pd.read_excel('zeromaster.xlsx')
 
 item = st.file_uploader("Upload inventory file.",type="xlsx")
@@ -21,4 +30,4 @@ if item is not None:
 
     st.write(file)
 
-    #file.to_excel('zeromaster.xlsx', index=False)
+    file.to_excel('./PythonServer/files/zeromaster.xlsx', index=False)
