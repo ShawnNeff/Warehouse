@@ -15,6 +15,7 @@ if os.path.exists(filepath):
     st.write("file loaded")
 else:
     st.error("File not found on the server.")
+    st.write(os.getcwd())
     
 item = st.file_uploader("Upload unassigned bins file.",type="xlsx")
 
