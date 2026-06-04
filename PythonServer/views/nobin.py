@@ -7,7 +7,7 @@ import os
 #script_dir = os.path.dirname(__file__)
 #filepath = os.path.join(script_dir, 'nobinmaster.xlsx')
 
-filepath = "./mount/scr/warehouse/PythonServer/files/nobinmaster.xlsx"
+filepath = "./PythonServer/files/nobinmaster.xlsx"
 nobinmaster = pd.DataFrame()
 
 if os.path.exists(filepath):
