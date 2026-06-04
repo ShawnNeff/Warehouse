@@ -200,7 +200,7 @@ st.header("Employee Timecard")
 st.write("")
 st.write("")
 
-item = st.file_uploader("Upload ADP timecard.",type="xlsx")
+item = st.file_uploader("Upload ADP timecard.",type="xls")
 item2 = st.file_uploader("TPH File.", type="xlsx")
 
 if item is not None and item2 is not None:
