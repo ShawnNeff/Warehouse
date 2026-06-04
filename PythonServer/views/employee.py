@@ -3,6 +3,7 @@ import pandas as pd
 import openpyxl
 import os
 import io
+import xlrd
 from datetime import datetime, date, timedelta
 
 # Function remove blank rows
