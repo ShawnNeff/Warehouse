@@ -4,7 +4,7 @@ import io
 import os
 
 # list for all non locations
-filepath = "./files/nobinmaster.xlsx"
+filepath = "./nobinmaster.xlsx"
 nobinmaster = pd.DataFrame()
 
 if os.path.exists(filepath):
