@@ -333,7 +333,7 @@ def add_breaktwo(employee, master_user):
 
     return master_user
 
-item = st.file_uploader("Upload transcations file to clean.",type="xlsx")
+item = st.file_uploader("Upload transcations file to clean.",type=["xlsx", "xls"])
 
 if item is not None:
     timegap = pd.read_excel(item)
