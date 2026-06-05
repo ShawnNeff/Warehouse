@@ -438,7 +438,7 @@ if item is not None:
             row_to_copy.append(row)
 
     # Save excel file
-    master_user.to_excel('.PythonServer/files/cleaned.xlsx', index=False)
+    master_user.to_excel('./PythonServer/files/cleaned.xlsx', index=False)
 
     # Open cleaned file
     master_user = pd.read_excel('/PythonServer/files/cleaned.xlsx')
