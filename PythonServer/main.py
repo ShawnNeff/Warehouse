@@ -25,6 +25,12 @@ transactions_page = st.Page(
     icon=":material/assignment:",
 )
 
+transactions_gaps = st.Page(
+    page="views/gaps.py",
+    title="Transacitons Gaps",
+    icon=':material/assignment:",
+)
+
 tph_page = st.Page(
     page="views/tph.py",
     title="Employee TPH",
@@ -107,7 +113,7 @@ contact_me = st.Page(
 pg = st.navigation(
     {
         "Dashboard": [dashboard_page],
-        "Employee": [employee_page, transactions_page, tph_page],
+        "Employee": [employee_page, transactions_page, transaction_gaps, tph_page],
         "Warehouse": [inventory_history, asn_page, multiple_item_page, multiple_locations_per_item, primary_page, core_page, nobins_page, zero_page],
         "Slotting": [slot_page, size_class_page, velocity_page],
         "Contact": [contact_me]
