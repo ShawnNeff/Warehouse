@@ -441,7 +441,7 @@ if item is not None:
     master_user.to_excel('./PythonServer/files/cleaned.xlsx', index=False)
 
     # Open cleaned file
-    master_user = pd.read_excel('/PythonServer/files/cleaned.xlsx')
+    master_user = pd.read_excel('./PythonServer/files/cleaned.xlsx')
 
     # Funciton Call - calls function to add employees timecard into the cleaned transcations
     master_user = add_time(employee, master_user)
