@@ -28,7 +28,7 @@ transactions_page = st.Page(
 transactions_gaps = st.Page(
     page="views/gaps.py",
     title="Transacitons Gaps",
-    icon=':material/assignment:",
+    icon=":material/assignment:",
 )
 
 tph_page = st.Page(
