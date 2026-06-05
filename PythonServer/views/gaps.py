@@ -6,7 +6,7 @@ from datetime import timedelta, datetime
 # Open excel file
 #df = pd.read_excel('./PythonServer/files/cleaned.xlsx')
 
-item = st.file_uploader("**Transaction File** - Upload cleaned transcation file in xlsx format.",type="xlsx")
+item = st.file_uploader("**Transaction File** - Upload cleaned transcation file in xlsx format.",type=["xlsx", "xls", "csv"])
 
 if item is not None:
     file = pd.read_excel(item)
