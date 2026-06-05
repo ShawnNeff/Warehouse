@@ -75,7 +75,7 @@ nobins_page = st.Page(
 
 zero_page = st.Page(
     page="views/zero.py",
-    title="Zero Qty Itmes",
+    title="Zero Qty Items",
     icon=":material/package_2:",
 )
 
